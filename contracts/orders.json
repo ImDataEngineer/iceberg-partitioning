@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Orders — Iceberg table contract",
+  "description": "Authoritative shape of the Iceberg table the learner must create. CI compares the schema and the partition spec against this contract exactly.",
+  "catalog_name": "local",
+  "namespace": "default",
+  "table_name": "orders_v1",
+  "full_identifier": "default.orders_v1",
+  "columns": [
+    { "name": "order_id",         "iceberg_type": "long",          "required": true,  "description": "Globally unique order id; primary key, never null." },
+    { "name": "event_time",       "iceberg_type": "timestamp",     "required": true,  "description": "Order timestamp (microsecond precision). The table is partitioned by year(event_time) — see partition_spec below." },
+    { "name": "customer_id",      "iceberg_type": "long",          "required": true,  "description": "Customer id (foreign key)." },
+    { "name": "product_name",     "iceberg_type": "string",        "required": true,  "description": "Product label." },
+    { "name": "country",          "iceberg_type": "string",        "required": true,  "description": "ISO-2 country code of the buyer." },
+    { "name": "payment_method",   "iceberg_type": "string",        "required": true,  "description": "card | paypal | transfer." },
+    { "name": "quantity",         "iceberg_type": "int",           "required": true,  "description": "Items in the order, 1..5." },
+    { "name": "unit_price_cents", "iceberg_type": "int",           "required": true,  "description": "Unit price, in cents (avoids decimal-float surprises)." }
+  ],
+  "partition_spec": [
+    {
+      "source_column": "event_time",
+      "transform": "year",
+      "name": "event_time_year",
+      "rationale": "Hidden partitioning by year(event_time). One partition per year. Critical: this is NOT 'add an order_year column and partition by identity'. The transform lives in the partition spec, not in the schema."
+    }
+  ],
+  "notes": [
+    "DO NOT add an `order_year` column to the schema. Iceberg's hidden partitioning derives the partition value from `event_time` at write time. That's the whole point of the project.",
+    "The table identifier in the REST catalog is `default.orders_v1`."
+  ]
+}

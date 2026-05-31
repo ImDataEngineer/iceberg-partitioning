@@ -18,11 +18,13 @@ Tu sors d'ici en sachant pourquoi un data engineer choisit Iceberg, ce que
 
 ## Le contexte
 
-Tu récupères 3 fichiers Parquet d'un projet amont (partitionnés à
-l'année — `orders_2023.parquet`, `orders_2024.parquet`, `orders_2025.parquet`).
-Ton équipe veut passer ce dataset sur une « vraie » table : ACID sur les
-appends, time-travel, possibilité d'écraser une partition sans casser les
-lectures en cours.
+Tu rejoins l'équipe data de **Hauler**, une plateforme logistique B2B
+qui agrège les commandes de plusieurs entrepôts régionaux. L'équipe
+analytique extrait 3 ans de commandes en Parquet (partitionnées à
+l'année — `orders_2023.parquet`, `orders_2024.parquet`,
+`orders_2025.parquet`) et veut basculer sur une « vraie » table : ACID
+sur les appends, time-travel, possibilité d'écraser une partition sans
+casser les lectures en cours des dashboards Finance.
 
 Tu as une stack locale sous la main : MinIO (S3-compatible) et un catalog
 Iceberg REST, démarrés en docker-compose par le devcontainer. Aucun

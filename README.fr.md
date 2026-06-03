@@ -1,6 +1,12 @@
+> *Aussi disponible en [anglais](./README.md).*
+
+[![Template](https://img.shields.io/badge/repo-template-1e293b?style=flat-square)](https://github.com/ImDataEngineer/iceberg-partitioning/generate) [![iamdataeng.com](https://img.shields.io/badge/iamdataeng.com-2563eb?style=flat-square)](https://iamdataeng.com/projects/storage.partitioned-lakehouse)
+
+> **Contexte.** Template pédagogique de [iamdataeng.com/projects/storage.partitioned-lakehouse](https://iamdataeng.com/projects/storage.partitioned-lakehouse). Fork, complète les TODO, push, reçois un verdict CI pédagogique. Pas un projet open source maintenu, un exercice évalué.
+
 # Ta première table Iceberg — `storage.partitioned-lakehouse`
 
-> **Niveau** : junior · **Durée estimée** : ~9 h · **Projet payant IAmDataEng**
+> **Niveau** : junior · **Durée estimée** : ~9 h · **Projet payant IamDataEngineer**
 > **Axe framework** : `storage`
 
 Ce projet est ton premier contact avec un vrai format de table. Pas
@@ -62,7 +68,7 @@ compris pourquoi tu as fait ce que tu as fait.
 ## Comment commencer
 
 Si tu es dans GitHub Codespaces (ouverture en un clic depuis l'app
-IAmDataEng), tout est prêt : MinIO et le catalog tournent, les fixtures
+IamDataEngineer), tout est prêt : MinIO et le catalog tournent, les fixtures
 Parquet sont générées, les dépendances Python sont installées. Vérifie avec
 `docker compose ps` — tu dois voir 2 services (`minio`, `iceberg-rest`) en
 état `running`.
@@ -91,7 +97,7 @@ Tu peux vérifier visuellement les données via la console MinIO sur
 
 Quand tes 4 tests passent en local, **commit + push** sur ton fork. La CI
 GitHub Actions rejoue la même rubric (elle relance la même stack
-docker-compose) et l'app IAmDataEng affiche le verdict dans ton dashboard.
+docker-compose) et l'app IamDataEngineer affiche le verdict dans ton dashboard.
 
 ---
 
@@ -204,6 +210,6 @@ check précis :
    ```
 
 4. Ouvre une issue dans ton fork avec le label `help-wanted` — la
-   communauté IAmDataEng y passe.
+   communauté IamDataEngineer y passe.
 
 Bonne route.

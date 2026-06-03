@@ -1,6 +1,12 @@
+> *Also available in [French](./README.fr.md).*
+
+[![Template](https://img.shields.io/badge/repo-template-1e293b?style=flat-square)](https://github.com/ImDataEngineer/iceberg-partitioning/generate) [![iamdataeng.com](https://img.shields.io/badge/iamdataeng.com-2563eb?style=flat-square)](https://iamdataeng.com/projects/storage.partitioned-lakehouse)
+
+> **Context.** Coursework template from [iamdataeng.com/projects/storage.partitioned-lakehouse](https://iamdataeng.com/projects/storage.partitioned-lakehouse). Fork, complete the TODO blocks, push, receive a pedagogical CI verdict. Not a maintained open-source project, an evaluated exercise.
+
 # Your first Iceberg table — `storage.partitioned-lakehouse`
 
-> **Level**: junior · **Estimated time**: ~9 h · **Paid IAmDataEng project**
+> **Level**: junior · **Estimated time**: ~9 h · **Paid IamDataEngineer project**
 > **Framework axis**: `storage`
 
 This project is your first contact with a real table format. Not "Parquet
@@ -60,7 +66,7 @@ you understood why you did what you did.
 
 ## Getting started
 
-If you're in GitHub Codespaces (one-click open from the IAmDataEng app),
+If you're in GitHub Codespaces (one-click open from the IamDataEngineer app),
 everything is ready: MinIO and the catalog are running, the Parquet
 fixtures are generated, Python dependencies are installed. Verify with
 `docker compose ps` — you should see 2 services (`minio`,
@@ -90,7 +96,7 @@ You can eyeball the data via the MinIO console at
 
 Once your 4 tests pass locally, **commit + push** to your fork. GitHub
 Actions CI replays the same rubric (it restarts the same docker-compose
-stack) and the IAmDataEng app displays the verdict in your dashboard.
+stack) and the IamDataEngineer app displays the verdict in your dashboard.
 
 ---
 
@@ -205,6 +211,6 @@ the same check for more than an hour:
    ```
 
 4. Open an issue on your fork with the `help-wanted` label — the
-   IAmDataEng community hangs out there.
+   IamDataEngineer community hangs out there.
 
 Good luck.
